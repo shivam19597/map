@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Neighborhood Map</title>
+    <link rel = "stylesheet" type = "text/css" href="css/app.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <!--Main section of the page-->
+    <main class="grid">
+        <section id="list_view_section" class="grid">
+            <h2 id="main_area_name">New Delhi</h2>
+            <input type="text" name="filter" data-bind="textInput: filtered_text" placeholder="Enter Text Here">
+            <button data-bind="click: filter">Filter</button>
+
+            <ul data-bind="foreach: temp_locations" class="grid">
+                <li data-bind="text: title, click: $parent.listItemClicked"></li>
+            </ul>
+        </section>
+        <!--Map Container-->
+        <div id="map"></div>
+    </main>
+
+    <!-- Knockout.js cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+    <!-- jquery.js cdn -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Apps Script File -->
+    <script src="js/app.js"></script>
+    <!-- Google Map Api -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3fVh46_YszhL0tIHbYa7jFU7PWNAfqPs&callback=run" async defer onerror="error()"></script>
+</body>
+
+</html>
